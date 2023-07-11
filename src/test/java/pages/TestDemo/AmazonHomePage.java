@@ -102,7 +102,7 @@ if(driverUtil.objectExists(By.xpath("(//span[contains(text(),'"+productName+"')]
 }
 else
 {
-	//added this line after failed push---
+	//added this line after failed push --MODIFIED COMMENT---
 	report.updateTestLog("Validating searchText",productName,Status.FAIL);
 }
 	}
