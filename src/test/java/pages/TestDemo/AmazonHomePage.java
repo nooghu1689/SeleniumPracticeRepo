@@ -63,7 +63,8 @@ private final By langEngRadioBtn = By.xpath("//a[@href='#switch-lang=en_AE']");
 	public AmazonHomePage(ScriptHelper scriptHelper) {
 		super(scriptHelper);
 		driver.get(properties.getProperty("ApplicationUrl"));
-driverUtil.waitUntilPageReadyStateComplete(60);
+		driverUtil.waitUntilPageReadyStateComplete(60);
+		driverUtil.waitUntilElementVisible(langLabel,30);
 		//driver.findElement(langChangeDropDown);
 		if(driver.findElement(langLabel).getText().equalsIgnoreCase("ar"))
 		{
@@ -89,7 +90,8 @@ driverUtil.waitUntilPageReadyStateComplete(60);
 
 
 public void BasicSearchValidate(){
-String productName=dataTable.getData("General_Data","ProductName");
+	String productName=dataTable.getData("General_Data","ProductName");
+	driverUtil.waitUntilElementVisible(txtSearchBox,10);
 	driver.findElement(txtSearchBox).sendKeys(productName);
 		driver.findElement(btnSearch).click();
 driverUtil.waitUntilPageReadyStateComplete(60);
