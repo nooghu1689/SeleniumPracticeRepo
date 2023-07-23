@@ -98,12 +98,13 @@ driverUtil.waitUntilPageReadyStateComplete(60);
 //driver.findElement(By.xpath("(//span[contains(text(),'samsung')])[1]))"));
 if(driverUtil.objectExists(By.xpath("(//span[contains(text(),'"+productName+"')])[1]")))
 {
+	report.updateTestLog("Validate Jenkins exeuction","Triggered Automatically",Status.DONE);
 	report.updateTestLog("Validating searchText",productName,Status.PASS);
 }
 else
 {
 	//added this line after failed push --MODIFIED COMMENT---
-
+	report.updateTestLog("Validate Jenkins exeuction","Triggered Automatically",Status.DONE);
 	report.updateTestLog("Validating searchText",productName,Status.FAIL);
 }
 	}
